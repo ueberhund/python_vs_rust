@@ -22,7 +22,7 @@ The Lambda function should have a IAM Role with the following permissions:
         },
         {
             "Action": ["sns:Publish"],
-            "Resource": "arn:aws:sns:us-east-1:1234567890:billing-alert",
+            "Resource": "arn:aws:sns:us-east-1:1234567890:billing-alert-REPLACE WITH ACTUAL ARN",
             "Effect": "Allow"
         },
         {
