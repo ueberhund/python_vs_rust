@@ -10,15 +10,25 @@ Both functions are expecting 2 environment variables:
 The Lambda function should have a IAM Role with the following permissions:
 
 - `AWSLambdaBasicExecutionRole`
-- Permissions to look across all accounts in the organization:
+- The following extra permissions:
 ```json 
 {
     "Version": "2012-10-17",
     "Statement": [
         {
-            "Effect": "Allow",
-            "Action": "organizations:ListAccounts",
-            "Resource": "*"
+            "Action": ["ce:GetCostAndUsage"],
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": ["sns:Publish"],
+            "Resource": "arn:aws:sns:us-east-1:1234567890:billing-alert",
+            "Effect": "Allow"
+        },
+        {
+            "Action": ["organizations:ListAccounts"],
+            "Resource": "*",
+            "Effect": "Allow"
         }
     ]
 }
