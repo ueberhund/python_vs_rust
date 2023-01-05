@@ -11,6 +11,7 @@ The Lambda function should have a IAM Role with the following permissions:
 
 - `AWSLambdaBasicExecutionRole`
 - Permissions to look across all accounts in the organization:
+```json 
 {
     "Version": "2012-10-17",
     "Statement": [
@@ -21,3 +22,4 @@ The Lambda function should have a IAM Role with the following permissions:
         }
     ]
 }
+```
